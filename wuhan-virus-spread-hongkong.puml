@@ -1,0 +1,187 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+skinparam monochrome true
+
+skinparam class {
+	BackgroundColor transparent
+}
+
+skinparam node {
+	BackgroundColor transparent
+}
+
+skinparam Header {
+	FontColor black
+}
+
+skinparam Footer {
+	FontColor black
+}
+
+title 武漢肺炎的感染鏈關係圖(香港) V1.0\n\n
+
+cloud "深圳" as ShenZhen
+
+cloud "珠海" as Zhuhai
+
+cloud "北京樓" as PekingRest
+
+cloud "青衣" as TsingYi {
+
+  cloud "康美樓" as HongMei {
+    card 42
+    card 12
+    42 --> 12: 樓上樓下鄰居
+  }
+  card 21
+  card 22
+  card 50
+  22-->21: 妻子
+}
+
+card 41
+cloud "打邊爐家族" as HotPotFamily {
+  card 27
+  card 30
+  card 29
+  card 31
+  card 33
+  card 37
+  card 32
+  card 34
+  card 35
+  card 36
+  29 --> 27: 外婆
+  30 --> 27: 父親
+  31 --> 27: 母親
+  32 --> 27: 表弟
+  33 --> 27: 四姨
+  34 --> 27: 表姐
+  35 --> 27: 三姨
+  36 --> 27: 表弟
+  37 --> 27: 阿姨
+  41 --> 35: 丈夫
+}
+
+card 40
+card 51
+card 39
+
+cloud "無外遊記錄及可追蹤源頭" as NoRecord {
+  card 38
+  card 56
+  card 58
+  card 45
+  card 16
+  card 17
+  card 18
+  card 23
+  card 24
+  card 28
+  card 38
+  card 43
+  card 47
+  card 59
+  card 57
+  39 --> 38: 太太
+  40 --> 38: 外母
+}
+
+cloud "澳門" as Macau
+
+cloud "武漢" as Wuhan {
+  card 1
+  card 3
+  card 4
+  card 5
+  card 8
+
+  cloud "在港住W酒店" as WHotel {
+    card 9
+    card 10
+  }
+
+  5--> 4: 丈夫
+  8--> 3: 丈夫
+}
+
+cloud "鑽石公主號" as DiamondPrincess
+
+cloud "醫管局" as HA
+cloud "河北"
+
+card 14
+card 39
+card 11
+card 2
+card 6
+card 7
+card 44
+card 48
+card 46
+card 52
+card 61
+card 13
+card 15
+card 19
+card 20
+card 25
+card 26
+card 49
+card 54
+card 53
+card 55
+card 60
+49 --> 42: 兒子
+46 -> 48: 父親
+21 --> ShenZhen
+20 --> 17: 妻子
+19 --> 17: 女兒
+15 -> 13: 父親
+14 --- DiamondPrincess
+11 --> 10: 女兒
+11 --> 9: 女兒
+2 --> Wuhan
+6 --> Wuhan
+7 --> Wuhan
+13 --> Wuhan
+44 -- 30: 同事
+52 --> 61: 僱主
+52 --> 46: 小姨
+46 --> 48: 父親
+48 --> 42: 媳婦
+42 -- Macau
+12 -- Macau
+25 --> Macau
+25 --> Zhuhai
+26 --> Macau
+26 --> Zhuhai
+26 --> 河北
+50 --> 37: 同事
+51 --> 47: 親戚
+53 -> 52: 兒子
+54 -> 53: 表姐
+55 --> ShenZhen
+59 --- HA
+57 --- HA
+60 --> 57: 妻子
+14 --> ShenZhen
+50 --- PekingRest
+37 -- PekingRest
+36 -- PekingRest
+
+/'Layuot
+'/
+
+HongMei -[hidden]--- HotPotFamily
+Wuhan -[hidden]- HotPotFamily
+
+left footer
+資料來源：
+https://wars.vote4.hk/cases
+endfooter
+
+@enduml
