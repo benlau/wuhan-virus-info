@@ -34,12 +34,20 @@ cloud "青衣" as TsingYi {
   cloud "康美樓" as HongMei {
     card 42
     card 12
-    42 --> 12: 樓上樓下鄰居
+    42 --- 12: 樓上樓下鄰居
   }
   card 21
   card 22
   card 50
   22-->21: 妻子
+}
+
+cloud "西灣河" as SaiWanHo {
+  card 38
+  card 40
+  card 39
+  39 --> 38: 太太
+  40 --> 38: 外母
 }
 
 card 41
@@ -70,8 +78,7 @@ card 40
 card 51
 card 39
 
-cloud "無外遊記錄及可追蹤源頭" as NoRecord {
-  card 38
+cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 56
   card 58
   card 45
@@ -81,13 +88,10 @@ cloud "無外遊記錄及可追蹤源頭" as NoRecord {
   card 23
   card 24
   card 28
-  card 38
   card 43
   card 47
   card 59
   card 57
-  39 --> 38: 太太
-  40 --> 38: 外母
 }
 
 cloud "澳門" as Macau
@@ -135,8 +139,9 @@ card 54
 card 53
 card 55
 card 60
+
 49 --> 42: 兒子
-46 -> 48: 父親
+46 --> 48: 父親
 21 --> ShenZhen
 20 --> 17: 妻子
 19 --> 17: 女兒
@@ -151,7 +156,6 @@ card 60
 44 -- 30: 同事
 52 --> 61: 僱主
 52 --> 46: 小姨
-46 --> 48: 父親
 48 --> 42: 媳婦
 42 -- Macau
 12 -- Macau
@@ -172,12 +176,16 @@ card 60
 50 --- PekingRest
 37 -- PekingRest
 36 -- PekingRest
+16 -- SaiWanHo
 
-/'Layuot
+/'Layout
+TsingYi -[hidden]--- HotPotFamily
+Wuhan -[hidden]- HotPotFamily
 '/
 
-HongMei -[hidden]--- HotPotFamily
-Wuhan -[hidden]- HotPotFamily
+TsingYi -[hidden] Wuhan
+TsingYi -[hidden]------- NoRecord
+TsingYi -[hidden]------- HotPotFamily
 
 left footer
 資料來源：
