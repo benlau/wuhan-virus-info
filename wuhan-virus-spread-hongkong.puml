@@ -50,6 +50,11 @@ cloud "西灣河" as SaiWanHo {
   40 --> 38: 外母
 }
 
+cloud "小西灣" {
+	card 64 <<已減少出門>>
+	card 65 <<已減少出門>>
+}
+
 card 41
 cloud "打邊爐家族" as HotPotFamily {
   card 27
@@ -113,6 +118,7 @@ cloud "武漢" as Wuhan {
 cloud "太古城" as TaikooShing {
 	card 46
 	card 57
+	card 60
 }
 
 cloud "鑽石公主號" as DiamondPrincess
@@ -141,9 +147,8 @@ card 49
 card 54
 card 53
 card 55 <<死亡>>
-card 60
 card 62
-card 63
+card 63 <<無病徵確診>>
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -186,6 +191,7 @@ card 63
 63 -> 60: 母親
 63-> 57: 岳母
 59 -- 57: 同事
+65 -- 64: 妻子
 
 /'Layout
 TsingYi -[hidden]--- HotPotFamily
@@ -195,7 +201,7 @@ Wuhan -[hidden]----- HotPotFamily
 '/
 TsingYi -[hidden]----- Wuhan
 HotPotFamily -[hidden]---- NoRecord
-
+SaiWanHo -[hidden] 小西灣
 
 left footer
 資料來源：
