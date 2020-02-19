@@ -21,7 +21,7 @@ skinparam Footer {
 	FontColor black
 }
 
-title 武漢肺炎的感染鏈關係圖(香港) V1.0\n\n
+title 武漢肺炎的感染鏈關係圖(香港) V1.0.1\n\n
 
 cloud "深圳" as ShenZhen
 
@@ -31,7 +31,7 @@ cloud "北京樓" as PekingRest
 
 cloud "青衣" as TsingYi {
 
-  cloud "康美樓" as HongMei {
+  database "康美樓" as HongMei {
     card 42
     card 12
     42 --- 12: 樓上樓下鄰居
@@ -128,7 +128,7 @@ card 48
 card 46
 card 52
 card 61
-card 13
+card 13 <<死亡>>
 card 15
 card 19
 card 20
@@ -137,7 +137,7 @@ card 26
 card 49
 card 54
 card 53
-card 55
+card 55 <<死亡>>
 card 60
 card 62
 
