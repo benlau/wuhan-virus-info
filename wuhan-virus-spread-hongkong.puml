@@ -139,6 +139,7 @@ card 54
 card 53
 card 55
 card 60
+card 62
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -157,8 +158,8 @@ card 60
 52 --> 61: 僱主
 52 --> 46: 小姨
 48 --> 42: 媳婦
-42 -- Macau
-12 -- Macau
+42 --> Macau
+12 --> Macau
 25 --> Macau
 25 --> Zhuhai
 26 --> Macau
@@ -177,6 +178,7 @@ card 60
 37 -- PekingRest
 36 -- PekingRest
 16 -- SaiWanHo
+62 --> Macau
 
 /'Layout
 TsingYi -[hidden]--- HotPotFamily
@@ -184,8 +186,8 @@ Wuhan -[hidden]- HotPotFamily
 '/
 
 TsingYi -[hidden] Wuhan
-TsingYi -[hidden]------- NoRecord
-TsingYi -[hidden]------- HotPotFamily
+TsingYi -[hidden]----- NoRecord
+Wuhan -[hidden]----- HotPotFamily
 
 left footer
 資料來源：
