@@ -33,6 +33,8 @@ cloud "青衣" as TsingYi {
   database "康美樓" as HongMei {
     card 42
     card 12
+		card 49
+		card 48
     42 --- 12: 樓上樓下鄰居
   }
   card 21
@@ -52,6 +54,10 @@ cloud "西灣河" as SaiWanHo {
 cloud "小西灣" {
 	card 64 <<已減少出門>>
 	card 65 <<已減少出門>>
+}
+
+cloud "警察" as Police {
+	card 69
 }
 
 card 41
@@ -95,6 +101,7 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 43
   card 47
 	card 67
+	card 68
 }
 
 cloud "澳門" as Macau
@@ -135,7 +142,6 @@ card 2
 card 6
 card 7
 card 44
-card 48
 card 52
 card 61
 card 13 <<死亡>>
@@ -144,7 +150,6 @@ card 19
 card 20
 card 25
 card 26
-card 49
 card 54
 card 53
 card 55 <<死亡>>
@@ -195,7 +200,7 @@ card 66
 59 -- 57: 同事
 65 -- 64: 妻子
 66 -> 63: 丈夫
-66 ----> 東莞: 多次前往
+66 --> 東莞: 多次前往
 
 
 /'Layout
