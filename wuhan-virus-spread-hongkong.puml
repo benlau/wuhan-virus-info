@@ -1,7 +1,6 @@
 @startuml
 
 skinparam classAttributeIconSize 0
-skinparam shadowing false
 hide circle
 skinparam monochrome true
 
@@ -95,6 +94,7 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 28
   card 43
   card 47
+	card 67
 }
 
 cloud "澳門" as Macau
@@ -125,6 +125,7 @@ cloud "鑽石公主號" as DiamondPrincess
 
 cloud "醫管局" as HA
 cloud "河北"
+cloud "東莞"
 
 card 59
 card 14
@@ -149,6 +150,7 @@ card 53
 card 55 <<死亡>>
 card 62
 card 63 <<無病徵確診>>
+card 66
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -179,8 +181,8 @@ card 63 <<無病徵確診>>
 53 -> 52: 兒子
 54 -> 53: 表姐
 55 --> ShenZhen
-59 --- HA
-57 --- HA
+59 -- HA
+57 -- HA
 60 --> 57: 妻子
 14 --> ShenZhen
 50 --- PekingRest
@@ -192,16 +194,19 @@ card 63 <<無病徵確診>>
 63-> 57: 岳母
 59 -- 57: 同事
 65 -- 64: 妻子
+66 -> 63: 丈夫
+66 ----> 東莞: 多次前往
+
 
 /'Layout
-TsingYi -[hidden]--- HotPotFamily
-Wuhan -[hidden]- HotPotFamily
-TsingYi -[hidden]----- NoRecord
-Wuhan -[hidden]----- HotPotFamily
-'/
-TsingYi -[hidden]----- Wuhan
 HotPotFamily -[hidden]---- NoRecord
 SaiWanHo -[hidden] 小西灣
+'/
+
+TsingYi -[hidden]------ Wuhan
+TsingYi -[hidden]----- NoRecord
+NoRecord -[hidden]- SaiWanHo
+NoRecord -[hidden]- 小西灣
 
 left footer
 資料來源：
