@@ -20,7 +20,7 @@ skinparam Footer {
 	FontColor black
 }
 
-title 武漢肺炎的感染鏈關係圖(香港) V1.0.1\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-02-21\n\n
 
 cloud "深圳" as ShenZhen
 
@@ -47,6 +47,7 @@ cloud "西灣河" as SaiWanHo {
   card 38
   card 40
   card 39
+	card 23
   39 --> 38: 太太
   40 --> 38: 外母
 }
@@ -56,22 +57,26 @@ cloud "小西灣" {
 	card 65 <<已減少出門>>
 }
 
-cloud "警察" as Police {
-	card 69
+package "警察" as Police {
+	actor 69
 }
 
 card 41
 cloud "打邊爐家族" as HotPotFamily {
-  card 27
-  card 30
-  card 29
-  card 31
-  card 33
+
+	cloud "住灣仔" as HotPotFamilyWanChain {
+		card 27
+		card 29
+		card 30
+		card 31
+		card 33
+		card 36
+	}
+
   card 37
   card 32
   card 34
   card 35
-  card 36
   29 --> 27: 外婆
   30 --> 27: 父親
   31 --> 27: 母親
@@ -95,7 +100,6 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 16
   card 17
   card 18
-  card 23
   card 24
   card 28
   card 43
@@ -128,6 +132,10 @@ cloud "太古城" as TaikooShing {
 	card 60
 }
 
+cloud "灣仔" as WanChai {
+	card 53
+}
+
 cloud "鑽石公主號" as DiamondPrincess
 
 cloud "醫管局" as HA
@@ -151,11 +159,11 @@ card 20
 card 25
 card 26
 card 54
-card 53
 card 55 <<死亡>>
 card 62
 card 63 <<無病徵確診>>
 card 66
+
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -201,7 +209,7 @@ card 66
 65 -- 64: 妻子
 66 -> 63: 丈夫
 66 --> 東莞: 多次前往
-
+HotPotFamilyWanChain -- WanChai
 
 /'Layout
 HotPotFamily -[hidden]---- NoRecord
