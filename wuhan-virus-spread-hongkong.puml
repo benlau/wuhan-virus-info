@@ -94,19 +94,22 @@ card 51
 card 39
 
 cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
-  card 56
-  card 58
-  card 45
   card 16
   card 17
   card 18
   card 24
   card 28
   card 43
+	card 45
   card 47
+	card 56
+  card 58
 	card 67
 	card 68
 	card 70
+	card 72
+	card 73
+	card 74
 }
 
 cloud "澳門" as Macau
@@ -164,7 +167,7 @@ card 55 <<死亡>>
 card 62
 card 63 <<無病徵確診>>
 card 66
-
+card 71
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -210,6 +213,7 @@ card 66
 65 -- 64: 妻子
 66 -> 63: 丈夫
 66 --> 東莞: 多次前往
+71 --> DiamondPrincess
 HotPotFamilyWanChain -- WanChai
 
 /'Layout
