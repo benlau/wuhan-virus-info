@@ -20,7 +20,7 @@ skinparam Footer {
 	FontColor black
 }
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-02-21\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-02-23\n\n
 
 cloud "深圳" as ShenZhen
 
@@ -106,6 +106,7 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 47
 	card 67
 	card 68
+	card 70
 }
 
 cloud "澳門" as Macau
