@@ -1,26 +1,6 @@
 @startuml
 
-skinparam classAttributeIconSize 0
-hide circle
-skinparam monochrome true
-
-skinparam class {
-	BackgroundColor transparent
-}
-
-skinparam node {
-	BackgroundColor transparent
-}
-
-skinparam Header {
-	FontColor black
-}
-
-skinparam Footer {
-	FontColor black
-}
-
-title 武漢肺炎的感染鏈關係圖(香港) 2020-02-23\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-02-24\n\n
 
 cloud "深圳" as ShenZhen
 
@@ -104,10 +84,7 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
   card 58
 	card 67
 	card 68
-	card 70
 	card 72
-	card 73
-	card 74
 }
 
 cloud "澳門" as Macau
@@ -151,7 +128,9 @@ cloud "屯門" as TuenMun {
 cloud "醫管局" as HA
 cloud "河北"
 cloud "東莞"
-
+cloud "福慧精舍"
+cloud "中國"
+cloud "大阪"
 
 card 59
 card 14
@@ -172,7 +151,15 @@ card 26
 card 54
 card 55 <<死亡>>
 card 62
+card 70
 card 71
+card 73
+card 74
+card 75
+card 76
+card 77
+card 78
+card 79
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -219,6 +206,17 @@ card 71
 66 -> 63: 丈夫
 66 --> 東莞: 多次前往
 71 --> DiamondPrincess
+75 --> 中國
+76 --> 大阪
+78 --> DiamondPrincess
+79 --> DiamondPrincess
+
+70 --> 福慧精舍
+73 --> 福慧精舍
+74 --> 福慧精舍
+76 --> 福慧精舍
+77 --> 福慧精舍
+
 HotPotFamilyWanChain -- WanChai
 
 /'Layout
@@ -230,10 +228,64 @@ TsingYi -[hidden]------ Wuhan
 TsingYi -[hidden]----- NoRecord
 NoRecord -[hidden]- SaiWanHo
 NoRecord -[hidden]- 小西灣
+NoRecord -[hidden]- 福慧精舍
+NoRecord -[hidden]- 大阪
+NoRecord -[hidden]- 中國
 
 left footer
 資料來源：
 https://wars.vote4.hk/cases
 endfooter
+
+skinparam classAttributeIconSize 0
+hide circle
+skinparam monochrome false
+
+skinparam class {
+	BackgroundColor transparent
+}
+
+skinparam node {
+	BackgroundColor transparent
+}
+
+skinparam cloud {
+	FontSize 24
+	BorderColor steelblue
+	BackgroundColor transparent
+}
+
+'skinparam ArrowColor coral
+'skinparam ArrowColor firebrick
+skinparam ArrowColor black
+skinparam TitleFontSize 28
+skinparam ActorBackgroundColor transparent
+
+skinparam database {
+	FontSize 24
+	BorderColor #6ca3a3
+}
+
+skinparam package {
+	FontSize 24
+	BorderColor #6ca3a3
+}
+
+skinparam card {
+	BackgroundColor d3ebe5
+}
+
+skinparam Header {
+	FontColor black
+}
+
+skinparam actor {
+	BackgroundColor transparent
+}
+
+skinparam Footer {
+	FontSize 18
+	FontColor black
+}
 
 @enduml
