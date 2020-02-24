@@ -160,7 +160,8 @@ card 76
 card 77
 card 78
 card 79
-
+card 80
+card 81
 49 --> 42: 兒子
 46 --> 48: 父親
 21 --> ShenZhen
@@ -216,6 +217,10 @@ card 79
 74 --> 福慧精舍
 76 --> 福慧精舍
 77 --> 福慧精舍
+
+80 --> DiamondPrincess
+81 --> DiamondPrincess
+
 
 HotPotFamilyWanChain -- WanChai
 
