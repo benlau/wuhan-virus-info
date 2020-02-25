@@ -1,8 +1,9 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-02-24\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-02-25\n\n
 
 cloud "深圳" as ShenZhen
+card 54
 
 cloud "珠海" as Zhuhai
 
@@ -128,7 +129,18 @@ cloud "屯門" as TuenMun {
 cloud "醫管局" as HA
 cloud "河北"
 cloud "東莞"
-cloud "福慧精舍"
+
+cloud "北角" as NorthPoint {
+	database "福慧精舍"
+	card 6
+	card 74
+	card 77
+	card 83
+	card 84
+
+	cloud "北角明星海鮮酒家聚餐" <<5人感染>>
+}
+
 cloud "中國"
 cloud "大阪"
 
@@ -137,7 +149,6 @@ card 14
 card 39
 card 11
 card 2
-card 6
 card 7
 card 44
 card 52
@@ -148,26 +159,25 @@ card 19
 card 20
 card 25
 card 26
-card 54
 card 55 <<死亡>>
 card 62
 card 70
 card 71
 card 73
-card 74
 card 75
 card 76
-card 77
 card 78
 card 79
 card 80
 card 81
+card 82
+
 49 --> 42: 兒子
 46 --> 48: 父親
 21 --> ShenZhen
 20 --> 17: 妻子
 19 --> 17: 女兒
-15 -> 13: 父親
+15 --> 13: 父親
 14 --- DiamondPrincess
 11 --> 10: 女兒
 11 --> 9: 女兒
@@ -212,6 +222,7 @@ card 81
 78 --> DiamondPrincess
 79 --> DiamondPrincess
 
+69 --> NorthPoint
 70 --> 福慧精舍
 73 --> 福慧精舍
 74 --> 福慧精舍
@@ -220,22 +231,28 @@ card 81
 
 80 --> DiamondPrincess
 81 --> DiamondPrincess
+82 --> 72: 兒子
+83 -> 76: 妹妹
+84 --> 83: 兒子
 
+54 --> 北角明星海鮮酒家聚餐
+53 --> 北角明星海鮮酒家聚餐
+52 --> 北角明星海鮮酒家聚餐
+48 --> 北角明星海鮮酒家聚餐
+46 --> 北角明星海鮮酒家聚餐
 
-HotPotFamilyWanChain -- WanChai
+HotPotFamilyWanChain ---- WanChai
 
 /'Layout
 HotPotFamily -[hidden]---- NoRecord
 SaiWanHo -[hidden] 小西灣
 '/
 
-TsingYi -[hidden]------ Wuhan
-TsingYi -[hidden]----- NoRecord
-NoRecord -[hidden]- SaiWanHo
-NoRecord -[hidden]- 小西灣
-NoRecord -[hidden]- 福慧精舍
-NoRecord -[hidden]- 大阪
+NorthPoint -[hidden]----- NoRecord
 NoRecord -[hidden]- 中國
+NoRecord -[hidden]- 小西灣
+TsingYi -[hidden]------ NorthPoint
+TsingYi -[hidden]------ HotPotFamily
 
 left footer
 資料來源：
@@ -269,6 +286,7 @@ skinparam ActorBackgroundColor transparent
 skinparam database {
 	FontSize 24
 	BorderColor #6ca3a3
+	BackgroundColor transparent
 }
 
 skinparam package {
