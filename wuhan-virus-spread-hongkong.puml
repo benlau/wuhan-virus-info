@@ -1,6 +1,6 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-02-25\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-02-26\n\n
 
 cloud "深圳" as ShenZhen
 card 54
@@ -86,6 +86,7 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
 	card 67
 	card 68
 	card 72
+	card 85
 }
 
 cloud "澳門" as Macau
@@ -114,6 +115,8 @@ cloud "太古城" as TaikooShing {
 
 cloud "灣仔" as WanChai {
 	card 53
+
+	cloud 打邊爐家族 <<5人>>
 }
 
 cloud "鑽石公主號" as DiamondPrincess
