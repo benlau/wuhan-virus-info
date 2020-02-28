@@ -142,6 +142,7 @@ cloud "北角" as NorthPoint {
 	card 84
 	card 86
 	card 89
+	card 93
 
 	89 --> 74: 丈夫
 	cloud "北角明星海鮮酒家聚餐" <<5人感染>>
@@ -180,6 +181,8 @@ card 82
 card 87
 card 88
 card 90
+card 91
+card 92
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -230,6 +233,7 @@ card 90
 76 --> 大阪
 78 --> DiamondPrincess
 79 --> DiamondPrincess
+91 --> 76: 兒子
 
 69 --> NorthPoint
 70 --> 福慧精舍
@@ -238,6 +242,8 @@ card 90
 76 --> 福慧精舍
 77 --> 福慧精舍
 86 --> 福慧精舍
+92 --> 福慧精舍
+93 --> 福慧精舍
 
 80 --> DiamondPrincess
 81 --> DiamondPrincess
