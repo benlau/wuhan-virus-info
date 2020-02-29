@@ -183,6 +183,7 @@ card 88
 card 90
 card 91
 card 92
+card 94
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -225,7 +226,7 @@ card 92
 63 -> 60: 母親
 63-> 57: 岳母
 59 -- 57: 同事
-65 -- 64: 妻子
+65 --> 64: 妻子
 66 -> 63: 丈夫
 66 --> 東莞: 多次前往
 71 --> DiamondPrincess
@@ -234,6 +235,7 @@ card 92
 78 --> DiamondPrincess
 79 --> DiamondPrincess
 91 --> 76: 兒子
+94 --> DiamondPrincess
 
 69 --> NorthPoint
 70 --> 福慧精舍
