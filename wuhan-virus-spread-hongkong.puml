@@ -73,10 +73,12 @@ cloud "打邊爐家族" as HotPotFamily {
 card 40
 card 39
 
-cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
+cloud "無外遊記錄&&無可追蹤源頭&&未分類" as NoRecord {
   card 16
   card 17
   card 18
+	card 19
+	card 20
   card 24
   card 28
 	card 43
@@ -86,7 +88,13 @@ cloud "無外遊記錄&&可追蹤源頭&&未分類" as NoRecord {
 	card 67
 	card 68
 	card 72
+	card 82
 	card 85
+	card 90
+	card 96
+	card 99
+	card 100
+	100 --> 99: 丈夫
 }
 
 cloud "澳門" as Macau
@@ -162,8 +170,6 @@ card 52
 card 61
 card 13 <<死亡>>
 card 15
-card 19
-card 20
 card 25
 card 26
 card 55 <<死亡>>
@@ -177,14 +183,14 @@ card 78
 card 79
 card 80
 card 81
-card 82
 card 87
 card 88
-card 90
 card 91
 card 92
 card 94
 card 95
+card 97
+card 98
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -237,6 +243,7 @@ card 95
 79 --> DiamondPrincess
 91 --> 76: 兒子
 94 --> DiamondPrincess
+97 --> DiamondPrincess
 
 69 --> NorthPoint
 70 --> 福慧精舍
@@ -247,6 +254,8 @@ card 95
 86 --> 福慧精舍
 92 --> 福慧精舍
 93 --> 福慧精舍
+98 --> 福慧精舍
+
 95 --> 92: 媳婦
 
 80 --> DiamondPrincess
