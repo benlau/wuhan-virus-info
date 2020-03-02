@@ -94,7 +94,9 @@ cloud "無外遊記錄&&無可追蹤源頭&&未分類" as NoRecord {
 	card 96
 	card 99
 	card 100
+	card 101
 	100 --> 99: 丈夫
+	101 --> 85: 哥哥
 }
 
 cloud "澳門" as Macau
@@ -278,8 +280,6 @@ card 98
 HotPotFamilyWanChain ---- WanChai
 
 /'Layout
-HotPotFamily -[hidden]---- NoRecord
-SaiWanHo -[hidden] 小西灣
 '/
 
 NorthPoint -[hidden]----- NoRecord
