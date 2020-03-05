@@ -1,6 +1,6 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-01\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-05\n\n
 
 cloud "深圳" as ShenZhen
 card 54
@@ -89,14 +89,20 @@ cloud "無外遊記錄&&無可追蹤源頭&&未分類" as NoRecord {
 	card 68
 	card 72
 	card 82
-	card 85
-	card 90
 	card 96
 	card 99
 	card 100
-	card 101
 	100 --> 99: 丈夫
+}
+
+cloud "周氏家庭群組" as ChauFamily {
+	card 85
+	card 90
+	card 101
+	card 104
 	101 --> 85: 哥哥
+	90 --> 85: 外傭
+	104 --> 101: 妻子
 }
 
 cloud "澳門" as Macau
@@ -153,13 +159,20 @@ cloud "北角" as NorthPoint {
 	card 86
 	card 89
 	card 93
-
+	card 102<<佛堂主持>>
 	89 --> 74: 丈夫
 	cloud "北角明星海鮮酒家聚餐" <<5人感染>>
+	102 --> 福慧精舍
 }
 
 cloud "中國"
 cloud "大阪"
+cloud "四川"
+cloud "廈門"
+cloud "印度" as India
+
+102 --> 四川
+102 --> 廈門
 
 card 59
 card 14
@@ -193,6 +206,8 @@ card 94
 card 95
 card 97
 card 98
+card 103
+card 105
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -244,21 +259,23 @@ card 98
 78 --> DiamondPrincess
 79 --> DiamondPrincess
 91 --> 76: 兒子
-94 --> DiamondPrincess
-97 --> DiamondPrincess
+DiamondPrincess <-- 94
+DiamondPrincess <-- 97
 
 69 --> NorthPoint
 70 --> 福慧精舍
 73 --> 福慧精舍
 74 --> 福慧精舍
 76 --> 福慧精舍
-77 --> 福慧精舍
-86 --> 福慧精舍
 92 --> 福慧精舍
 93 --> 福慧精舍
 98 --> 福慧精舍
+福慧精舍 <-- 86
+福慧精舍 <-- 77
 
 95 --> 92: 媳婦
+103 --> 76: 家庭傭工
+103 --> 91: 家庭傭工
 
 80 --> DiamondPrincess
 81 --> DiamondPrincess
@@ -274,17 +291,17 @@ card 98
 52 --> 北角明星海鮮酒家聚餐
 48 --> 北角明星海鮮酒家聚餐
 46 --> 北角明星海鮮酒家聚餐
-
-90 --> 85: 外傭
+105 --> India
 
 HotPotFamilyWanChain ---- WanChai
 
 /'Layout
 '/
 
-NorthPoint -[hidden]----- NoRecord
+NorthPoint -[hidden]----- ChauFamily
 NoRecord -[hidden]- 中國
 NoRecord -[hidden]- 小西灣
+NoRecord -[hidden]- ChauFamily
 TsingYi -[hidden]------ NorthPoint
 TsingYi -[hidden]------ HotPotFamily
 
