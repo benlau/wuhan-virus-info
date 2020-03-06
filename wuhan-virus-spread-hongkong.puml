@@ -170,6 +170,10 @@ cloud "大阪"
 cloud "四川"
 cloud "廈門"
 cloud "印度" as India
+cloud "美國"
+cloud "墨西哥"
+cloud "倫敦"
+cloud "巴黎"
 
 102 --> 四川
 102 --> 廈門
@@ -208,6 +212,9 @@ card 97
 card 98
 card 103
 card 105
+card 106 <<印度籍商人>>
+card 107
+card 108
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -292,6 +299,13 @@ DiamondPrincess <-- 97
 48 --> 北角明星海鮮酒家聚餐
 46 --> 北角明星海鮮酒家聚餐
 105 --> India
+106 --> 美國
+106 --> 墨西哥
+106 --> 倫敦
+106 --> 巴黎
+107 --> India
+105 - 107 : 參加同一旅行團
+108 --> 105: 丈夫
 
 HotPotFamilyWanChain ---- WanChai
 
@@ -302,12 +316,15 @@ NorthPoint -[hidden]----- ChauFamily
 NoRecord -[hidden]- 中國
 NoRecord -[hidden]- 小西灣
 NoRecord -[hidden]- ChauFamily
+NoRecord -[hidden]- 106
 TsingYi -[hidden]------ NorthPoint
 TsingYi -[hidden]------ HotPotFamily
 
 left footer
 資料來源：
 https://wars.vote4.hk/cases
+
+發佈： Unlimited Build Works
 endfooter
 
 skinparam classAttributeIconSize 0
