@@ -103,9 +103,11 @@ cloud "周氏家庭群組" as ChauFamily {
 	card 90
 	card 101
 	card 104
+	card 113
 	101 --> 85: 哥哥
 	90 --> 85: 外傭
 	104 --> 101: 妻子
+	113 --> 85: 家傭
 }
 
 cloud "澳門" as Macau
@@ -162,9 +164,12 @@ cloud "北角" as NorthPoint {
 	card 89
 	card 93
 	card 102<<佛堂主持>>
+	card 112
 	89 --> 74: 丈夫
 	cloud "北角明星海鮮酒家聚餐" <<5人感染>>
 	102 --> 福慧精舍
+	112 -> 83: 丈夫
+	112 --> 84: 父親
 }
 
 cloud "中國"
@@ -173,13 +178,14 @@ cloud "四川"
 cloud "廈門"
 cloud "印度" as India
 
-cloud "印度旅行團" as TravelDan {
+cloud "印度旅行團" as IndiaTravelDan {
 	card 105
 	card 107
 	card 110
+	card 111
 }
 
-TravelDan --> India
+IndiaTravelDan --> India
 
 cloud "美國"
 cloud "墨西哥"
@@ -224,6 +230,7 @@ card 98
 card 103
 card 106 <<印度籍商人>>
 card 108
+card 114
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -282,12 +289,12 @@ DiamondPrincess <-- 79
 70 --> 福慧精舍
 73 --> 福慧精舍
 74 --> 福慧精舍
-76 --> 福慧精舍
 92 --> 福慧精舍
 93 --> 福慧精舍
 98 --> 福慧精舍
 福慧精舍 <-- 86
 福慧精舍 <-- 77
+福慧精舍 <-- 76
 
 95 --> 92: 媳婦
 103 --> 76: 家庭傭工
@@ -301,7 +308,7 @@ DiamondPrincess <-- 80
 
 82 --> 72: 兒子
 83 -> 76: 妹妹
-84 --> 83: 兒子
+83 --> 84: 母親
 
 54 --> 北角明星海鮮酒家聚餐
 53 --> 北角明星海鮮酒家聚餐
@@ -314,6 +321,8 @@ DiamondPrincess <-- 80
 106 --> 巴黎
 108 --> 105: 丈夫
 109 --> Wuhan
+114 --> 日本
+114 --> 倫敦
 
 HotPotFamilyWanChain ---- WanChai
 
@@ -323,7 +332,7 @@ HotPotFamilyWanChain ---- WanChai
 TsingYi -[hidden]------ NorthPoint
 TsingYi -[hidden]------ HotPotFamily
 
-NorthPoint -[hidden]----- ChauFamily
+NorthPoint -[hidden]----- NoRecord
 
 NoRecord -[hidden]- 中國
 NoRecord -[hidden]- 小西灣
