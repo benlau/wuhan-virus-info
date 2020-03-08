@@ -1,8 +1,11 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-05\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-08\n\n
 
-cloud "深圳" as ShenZhen
+cloud "深圳" as ShenZhen {
+	card 109
+}
+
 card 54
 
 cloud "珠海" as Zhuhai
@@ -131,7 +134,6 @@ cloud "太古城" as TaikooShing {
 
 cloud "灣仔" as WanChai {
 	card 53
-
 	cloud 打邊爐家族 <<5人>>
 }
 
@@ -170,6 +172,15 @@ cloud "大阪"
 cloud "四川"
 cloud "廈門"
 cloud "印度" as India
+
+cloud "印度旅行團" as TravelDan {
+	card 105
+	card 107
+	card 110
+}
+
+TravelDan --> India
+
 cloud "美國"
 cloud "墨西哥"
 cloud "倫敦"
@@ -211,9 +222,7 @@ card 95
 card 97
 card 98
 card 103
-card 105
 card 106 <<印度籍商人>>
-card 107
 card 108
 
 49 --> 42: 兒子
@@ -264,10 +273,10 @@ card 108
 75 --> 中國
 76 --> 大阪
 78 --> DiamondPrincess
-79 --> DiamondPrincess
 91 --> 76: 兒子
 DiamondPrincess <-- 94
 DiamondPrincess <-- 97
+DiamondPrincess <-- 79
 
 69 --> NorthPoint
 70 --> 福慧精舍
@@ -284,7 +293,8 @@ DiamondPrincess <-- 97
 103 --> 76: 家庭傭工
 103 --> 91: 家庭傭工
 
-80 --> DiamondPrincess
+DiamondPrincess <-- 80
+
 81 --> DiamondPrincess
 87 --> DiamondPrincess
 88 --> DiamondPrincess
@@ -298,27 +308,28 @@ DiamondPrincess <-- 97
 52 --> 北角明星海鮮酒家聚餐
 48 --> 北角明星海鮮酒家聚餐
 46 --> 北角明星海鮮酒家聚餐
-105 --> India
 106 --> 美國
 106 --> 墨西哥
 106 --> 倫敦
 106 --> 巴黎
-107 --> India
-105 - 107 : 參加同一旅行團
 108 --> 105: 丈夫
+109 --> Wuhan
 
 HotPotFamilyWanChain ---- WanChai
 
 /'Layout
 '/
 
+TsingYi -[hidden]------ NorthPoint
+TsingYi -[hidden]------ HotPotFamily
+
 NorthPoint -[hidden]----- ChauFamily
+
 NoRecord -[hidden]- 中國
 NoRecord -[hidden]- 小西灣
 NoRecord -[hidden]- ChauFamily
 NoRecord -[hidden]- 106
-TsingYi -[hidden]------ NorthPoint
-TsingYi -[hidden]------ HotPotFamily
+NoRecord -[hidden]- India
 
 left footer
 資料來源：
