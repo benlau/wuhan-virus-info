@@ -1,6 +1,6 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-08\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-10\n\n
 
 cloud "深圳" as ShenZhen {
 	card 109
@@ -183,6 +183,7 @@ cloud "印度旅行團" as IndiaTravelDan {
 	card 107
 	card 110
 	card 111
+	card 115
 }
 
 IndiaTravelDan --> India
@@ -191,6 +192,8 @@ cloud "美國"
 cloud "墨西哥"
 cloud "倫敦"
 cloud "巴黎"
+cloud "日本" as Japan
+cloud "埃及" as Egypt
 
 102 --> 四川
 102 --> 廈門
@@ -231,6 +234,10 @@ card 103
 card 106 <<印度籍商人>>
 card 108
 card 114
+card 116
+card 117
+card 118
+card 119
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -280,7 +287,7 @@ card 114
 75 --> 中國
 76 --> 大阪
 78 --> DiamondPrincess
-91 --> 76: 兒子
+76 <-- 91: 兒子
 DiamondPrincess <-- 94
 DiamondPrincess <-- 97
 DiamondPrincess <-- 79
@@ -321,8 +328,12 @@ DiamondPrincess <-- 80
 106 --> 巴黎
 108 --> 105: 丈夫
 109 --> Wuhan
-114 --> 日本
+114 --> Japan
 114 --> 倫敦
+116 --> 106: 司機
+117 --> IndiaTravelDan : <<父親為團友\n在溫哥華確診>>
+117 <-- 118: 外傭
+119 --> Egypt
 
 HotPotFamilyWanChain ---- WanChai
 
@@ -332,7 +343,7 @@ HotPotFamilyWanChain ---- WanChai
 TsingYi -[hidden]------ NorthPoint
 TsingYi -[hidden]------ HotPotFamily
 
-NorthPoint -[hidden]----- NoRecord
+NorthPoint -[hidden]----- ChauFamily
 
 NoRecord -[hidden]- 中國
 NoRecord -[hidden]- 小西灣
