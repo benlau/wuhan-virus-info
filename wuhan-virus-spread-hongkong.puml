@@ -148,6 +148,7 @@ cloud "屯門" as TuenMun {
 	card 66
 	card 120
 	card 121
+	120 - 121 : 夫婦
 }
 
 cloud "醫管局" as HA
@@ -195,7 +196,20 @@ cloud "倫敦"
 cloud "巴黎"
 cloud "日本" as Japan
 cloud "埃及" as Egypt
-cloud "埃及旅行團" as EgyptTravelDan
+cloud "埃及旅行團" as EgyptTravelDan {
+	card 119
+	card 123
+	card 124
+	card 125 <<導遊>>
+	card 126
+	card 127
+	card 129
+	126 -- 127: 夫婦
+	129 -- 123: 夫婦
+	124 -- 119: 夫婦
+}
+cloud "西班牙馬德里"
+cloud "荷蘭阿姆斯特丹"
 
 102 --> 四川
 102 --> 廈門
@@ -239,7 +253,8 @@ card 114
 card 116
 card 117
 card 118
-card 119
+card 122 <<空姐>>
+card 130
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -335,10 +350,12 @@ DiamondPrincess <-- 80
 116 --> 106: 司機
 117 --> IndiaTravelDan : <<父親為團友\n在溫哥華確診>>
 117 <-- 118: 外傭
-119 --> EgyptTravelDan
 120 --> EgyptTravelDan
 121 --> EgyptTravelDan
 EgyptTravelDan --> Egypt
+122 --> 西班牙馬德里
+122 --> 荷蘭阿姆斯特丹
+130 --> 倫敦
 
 HotPotFamilyWanChain ---- WanChai
 
@@ -347,7 +364,7 @@ HotPotFamilyWanChain ---- WanChai
 
 TsingYi -[hidden]------ NorthPoint
 TsingYi -[hidden]------ HotPotFamily
-NorthPoint -[hidden]----- NoRecord
+TuenMun -[hidden]----- NoRecord
 ChauFamily -[hidden]- NoRecord
 ChauFamily -[hidden]- IndiaTravelDan
 ChauFamily -[hidden]- SaiWanHo
