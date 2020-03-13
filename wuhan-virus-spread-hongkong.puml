@@ -1,6 +1,6 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-11\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-13\n\n
 
 cloud "深圳" as ShenZhen {
 	card 109
@@ -210,6 +210,9 @@ cloud "埃及旅行團" as EgyptTravelDan {
 }
 cloud "西班牙馬德里"
 cloud "荷蘭阿姆斯特丹"
+cloud "菲律賓" as Philippine
+cloud "波士頓"  as Boston
+cloud "東京"  as Tokyo
 
 102 --> 四川
 102 --> 廈門
@@ -255,6 +258,8 @@ card 117
 card 118
 card 122 <<空姐>>
 card 130
+card 131
+card 132
 
 49 --> 42: 兒子
 46 --> 48: 父親
@@ -356,6 +361,10 @@ EgyptTravelDan --> Egypt
 122 --> 西班牙馬德里
 122 --> 荷蘭阿姆斯特丹
 130 --> 倫敦
+130 - 131: 夫婦
+132 --> Boston
+132 --> Philippine
+132 --> Tokyo
 
 HotPotFamilyWanChain ---- WanChai
 
@@ -368,8 +377,15 @@ TuenMun -[hidden]----- NoRecord
 ChauFamily -[hidden]- NoRecord
 ChauFamily -[hidden]- IndiaTravelDan
 ChauFamily -[hidden]- SaiWanHo
-ChauFamily -[hidden]- 116
 ChauFamily -[hidden]- 小西灣
+
+ChauFamily -[hidden]--- 75
+
+132 -[hidden]- 122
+132 -[hidden]- 75
+132 -[hidden]- 116
+
+
 
 left footer
 資料來源：
