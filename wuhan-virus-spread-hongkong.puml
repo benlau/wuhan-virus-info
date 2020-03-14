@@ -1,6 +1,6 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-13\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-14\n\n
 
 cloud "深圳" as ShenZhen {
 	card 109
@@ -11,6 +11,12 @@ card 54
 cloud "珠海" as Zhuhai
 
 cloud "北京樓" as PekingRest
+
+cloud "摩洛哥"
+cloud "荷蘭阿姆斯特丹"
+card 137
+137 --> 摩洛哥
+137 --> 荷蘭阿姆斯特丹
 
 cloud "青衣" as TsingYi {
 
@@ -24,7 +30,9 @@ cloud "青衣" as TsingYi {
   card 21
   card 22
   card 50
+	card 142
   22-->21: 妻子
+	142 --> 137: 姐夫
 }
 
 cloud "西灣河" as SaiWanHo {
@@ -93,7 +101,7 @@ cloud "無外遊記錄&&無可追蹤源頭&&未分類" as NoSource {
 	card 72
 	card 82
 	card 96
-	card 99
+	card 99 <<死亡>>
 	card 100
 	100 --> 99: 丈夫
 }
@@ -196,21 +204,28 @@ cloud "倫敦"
 cloud "希臘"
 cloud "巴黎"
 cloud "日本" as Japan
-cloud "埃及" as Egypt
-cloud "埃及旅行團" as EgyptTravelDan {
+
+cloud "大埔亨泰樓" {
 	card 119
-	card 123
 	card 124
+	card 140
+	124 - 119: 夫婦
+}
+
+cloud "埃及" as Egypt
+cloud "埃及旅行團" as EgyptTravelDan <<9人確診>> {
+	card 123
 	card 125 <<導遊>>
 	card 126
 	card 127
 	card 129
 	126 -- 127: 夫婦
 	129 -- 123: 夫婦
-	124 -- 119: 夫婦
 }
+
+119 --> EgyptTravelDan
+
 cloud "西班牙馬德里"
-cloud "荷蘭阿姆斯特丹"
 cloud "菲律賓" as Philippine
 cloud "波士頓"  as Boston
 cloud "東京"  as Tokyo
@@ -264,6 +279,8 @@ card 132
 card 133<<16個月大男嬰>>
 card 134
 card 135
+card 136
+
 49 --> 42: 兒子
 46 --> 48: 父親
 21 --> ShenZhen
@@ -319,14 +336,14 @@ DiamondPrincess <-- 79
 
 69 --> NorthPoint
 70 --> 福慧精舍
-73 --> 福慧精舍
 74 --> 福慧精舍
 92 --> 福慧精舍
 93 --> 福慧精舍
-98 --> 福慧精舍
 福慧精舍 <-- 86
 福慧精舍 <-- 77
 福慧精舍 <-- 76
+福慧精舍 <-- 73
+福慧精舍 <-- 98
 
 95 --> 92: 媳婦
 103 --> 76: 家庭傭工
@@ -376,25 +393,42 @@ EgyptTravelDan --> Egypt
 135 --> 倫敦
 135 --> 希臘
 135 --> 巴黎
+136 --> Tokyo
+
+cloud "美國科羅拉多州"
+136 --> 美國科羅拉多州
+136 --> Tokyo
+
+card 138
+138 --> 130: 父親
+
+cloud "杜拜"
+card 139
+139 --> 杜拜
+139 --> 西班牙馬德里
+
+
+card 141
+141 --> 倫敦
 
 /'Layout
 '/
 
-/' Level 1 '/
-HotPotFamilyWanChain ---- WanChai
-TsingYi -[hidden]------ NorthPoint
-
+TsingYi -[hidden]------ Wuhan
+TsingYi -[hidden]------ HotPotFamily
 TuenMun -[hidden]-- EgyptTravelDan
-EgyptTravelDan -[hidden]------- NoSource
+EgyptTravelDan -[hidden]--- 139
+EgyptTravelDan -[hidden]--- NoSource
 
-ChauFamily -[hidden]- NoSource
-ChauFamily -[hidden]- IndiaTravelDan
-ChauFamily -[hidden]- SaiWanHo
-ChauFamily -[hidden]- 小西灣
-ChauFamily -[hidden]--- 75
-132 -[hidden]- 122
-132 -[hidden]- 75
-132 -[hidden]- 116
+NoSource -[hidden]------- 西班牙馬德里
+
+西班牙馬德里 -[hidden]- 荷蘭阿姆斯特丹
+西班牙馬德里 -[hidden]- 摩洛哥
+西班牙馬德里 -[hidden]- 杜拜
+西班牙馬德里 -[hidden]- 倫敦
+西班牙馬德里 -[hidden]- Japan
+西班牙馬德里 -[hidden]- Philippine
+西班牙馬德里 -[hidden]- 中國
 
 left footer
 資料來源：
