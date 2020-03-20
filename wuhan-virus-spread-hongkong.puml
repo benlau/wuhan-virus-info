@@ -1,9 +1,13 @@
 @startuml
 
-title 武漢肺炎的感染鏈關係圖(香港) 2020-03-16\n\n
+title 武漢肺炎的感染鏈關係圖(香港) 2020-03-20 (未輸入完成)\n\n
 
 cloud "深圳" as ShenZhen {
 	card 109
+}
+
+cloud "西班牙" as Spain {
+	cloud "馬德里"
 }
 
 card 54
@@ -157,7 +161,12 @@ cloud "屯門" as TuenMun {
 	card 120
 	card 121
 	120 - 121 : 夫婦
+	card 152
+	card 161<<空姐>>
+	161 --> 馬德里
 }
+
+card 162
 
 cloud "醫管局" as HA
 cloud "河北"
@@ -201,11 +210,17 @@ IndiaTravelDan --> India
 cloud "美國" as USA {
 	cloud "波士頓"  as Boston
 	cloud "科羅拉多州"
+	cloud "紐約" as NewYork
 }
 
 cloud "墨西哥"
-cloud "倫敦"
+
+cloud 英國 as Britain {
+	cloud "倫敦"
+}
+
 cloud "希臘"
+cloud "多倫多"
 
 cloud "法國" as France {
 	cloud "巴黎"
@@ -236,7 +251,6 @@ cloud "埃及旅行團" as EgyptTravelDan <<9人確診>> {
 
 119 --> EgyptTravelDan
 
-cloud "西班牙馬德里"
 cloud "菲律賓" as Philippine
 
 102 --> 四川
@@ -387,7 +401,7 @@ DiamondPrincess <-- 80
 120 --> EgyptTravelDan
 121 --> EgyptTravelDan
 EgyptTravelDan --> Egypt
-122 --> 西班牙馬德里
+122 --> 馬德里
 122 --> 荷蘭阿姆斯特丹
 
 倫敦 <-- 130
@@ -414,7 +428,7 @@ card 138
 cloud "杜拜"
 card 139
 139 --> 杜拜
-139 --> 西班牙馬德里
+139 --> 馬德里
 
 
 card 141
@@ -422,6 +436,9 @@ card 141
 
 card 143
 143 --> 北海道
+card 153
+153 -> 143: 女朋友
+153 --> 北海道
 
 cloud "德國" as Germany
 
@@ -437,6 +454,61 @@ card 146
 146 --> France
 145 - 146: 一同旅遊
 
+card 147
+card 148
+147 - 148: 夫妻
+NewYork <-- 147
+NewYork <-- 148
+多倫多 <-- 147
+多倫多 <-- 148
+
+cloud "突尼西亞"
+card 149 <<城巴車長>>
+Spain <-- 149
+Britain <-- 149
+突尼西亞 <-- 149
+
+cloud "荷蘭"
+card 150
+荷蘭 <-- 150
+
+card 151 <<遊客>>
+杜拜 <-- 151
+152 --> Egypt
+
+card 154
+倫敦 <-- 154
+Germany <-- 154
+奧地利 <-- 154
+
+card 155
+155 --> 143: 私人司機
+
+cloud "瑞士"
+
+card 156
+瑞士 <-- 156
+
+cloud "溫哥華"
+cloud "威士拿"
+
+cloud "大埔逸瓏灣" {
+	card 157
+	card 158<<醫生>>
+	溫哥華 <-- 157
+	溫哥華 <-- 158
+	威士拿 <-- 158
+}
+
+card 159
+倫敦 <-- 159
+Spain <-- 159
+巴黎 <-- 159
+
+cloud "馬來西亞吉隆坡"
+card 160
+160 --> 馬來西亞吉隆坡
+
 /'Layout
 '/
 
@@ -446,15 +518,15 @@ TuenMun -[hidden]-- EgyptTravelDan
 EgyptTravelDan -[hidden]--- 139
 EgyptTravelDan -[hidden]--- NoSource
 
-NoSource -[hidden]------- 西班牙馬德里
+NoSource -[hidden]------- 馬德里
 
-西班牙馬德里 -[hidden]- 荷蘭阿姆斯特丹
-西班牙馬德里 -[hidden]- 摩洛哥
-西班牙馬德里 -[hidden]- 杜拜
-西班牙馬德里 -[hidden]- 倫敦
-西班牙馬德里 -[hidden]- Japan
-西班牙馬德里 -[hidden]- Philippine
-西班牙馬德里 -[hidden]- 中國
+馬德里 -[hidden]- 荷蘭阿姆斯特丹
+馬德里 -[hidden]- 摩洛哥
+馬德里 -[hidden]- 杜拜
+馬德里 -[hidden]- 倫敦
+馬德里 -[hidden]- Japan
+馬德里 -[hidden]- Philippine
+馬德里 -[hidden]- 中國
 
 left footer
 資料來源：
